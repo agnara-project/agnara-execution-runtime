@@ -1,0 +1,25 @@
+name: Documentation & Educational Improvement
+description: Suggest an improvement to README, ARCHITECTURE, or educational guides.
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to suggest educational clarifications or corrections to documentation.
+        Note that this repository is frozen at `agnara==0.1.0a3`.
+
+  - type: textarea
+    id: location
+    attributes:
+      label: Affected Document
+      description: File name and section (e.g., README.md "Execution Pipeline").
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested Improvement
+      description: What should be updated and why does it improve educational clarity?
+    validations:
+      required: true

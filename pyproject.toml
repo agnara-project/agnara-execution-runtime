@@ -1,0 +1,51 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agnara-execution-runtime"
+version = "0.1.0"
+description = "Historical Reference Application #005 for Agnara execution runtime mechanics."
+readme = "README.md"
+requires-python = ">=3.14"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "Blandskron" }
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+]
+dependencies = [
+    "agnara==0.1.0a3",
+]
+
+[project.urls]
+Homepage = "https://github.com/agnara-project/agnara-execution-runtime"
+Repository = "https://github.com/agnara-project/agnara-execution-runtime"
+Issues = "https://github.com/agnara-project/agnara-execution-runtime/issues"
+Agnara = "https://github.com/Blandskron/agnara"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.0.0",
+    "ruff>=0.16.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["domain.py", "services.py", "orders.py"]
+
+[tool.ruff]
+target-version = "py314"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "RUF"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

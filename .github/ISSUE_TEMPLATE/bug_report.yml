@@ -1,0 +1,48 @@
+name: Bug Report
+description: Report an unexpected behavior or regression in Historical Reference Application #005.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting an issue. Note that this repository is **Historical Reference Application #005**, pinned to `agnara==0.1.0a3` on **CPython >= 3.14**.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What unexpected behavior did you encounter?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction Steps
+      description: Exact commands executed from a clean virtual environment.
+      placeholder: |
+        1. py -3.14 -m venv .venv
+        2. .\.venv\Scripts\Activate.ps1
+        3. pip install -r requirements.txt
+        4. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs Actual Behavior
+      description: What should have happened according to agnara==0.1.0a3 runtime execution specifications?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Python Version
+      options:
+        - "CPython 3.14"
+        - "CPython 3.14 free-threaded (t)"
+        - "CPython 3.15+"
+    validations:
+      required: true
